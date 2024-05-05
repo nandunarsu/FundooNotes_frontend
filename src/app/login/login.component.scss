@@ -1,0 +1,47 @@
+.first-main-cnt {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: auto;
+    gap: 10px;
+    margin-top: 170px;
+   
+}
+.first-fundo-color-cnt{
+    color: rgb(232, 170, 70);
+    font-size: 30px;
+}
+
+.first-login-password-ip {
+    width: 100%;
+}
+
+.first-password-forgetpassword-cnt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+// .first-login-btn-cnt{
+//     background-color: blue;
+// }
+.first-create-account-login-btn-cnt {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.login-footer-cnt{
+display: flex;
+ flex-direction: row;
+ justify-content: center;
+ padding:4px;
+ margin:10px;
+}
+.login-footer-language-option-cnt{
+    margin-right: 75px;
+    margin-left: 20px;
+}

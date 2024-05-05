@@ -1,0 +1,39 @@
+<form [formGroup]="loginForm" class="first-main-cnt">
+    
+    <span class="first-fundo-color-cnt">Fundoo</span>
+    <span><strong>Signin</strong></span>
+    <span><strong>Use your fundoo Account</strong></span>
+   
+
+    <mat-form-field class="first-login-password-ip" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Email" />
+        <mat-error *ngIf="loginControl['email']?.hasError('required')">Email required</mat-error>
+        <mat-error *ngIf="loginControl['email']?.hasError('email')">Incorrect Email Format</mat-error>
+    </mat-form-field>
+    <div class="first-password-forgetpassword-cnt">
+        <mat-form-field class="first-login-password-ip" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" placeholder="Password" />
+            <mat-error *ngIf="loginControl['password']?.hasError('required')">Password required</mat-error>
+            <mat-error *ngIf="loginControl['password']?.hasError('minlength')">Password must be 6 characters </mat-error>
+        </mat-form-field>
+
+        <button mat-stroked-button color="primary">Forgot Password</button>
+    </div>
+    <div class="first-create-account-login-btn-cnt">
+        <button mat-stroked-button color="primary">Create Account</button>
+        <div >
+          <button mat-raised-button (click)="handleLogin()" color="primary">Login</button>
+        </div>
+    </div>
+</form>
+<footer class="login-footer-cnt">
+    <select class="login-footer-language-option-cnt" name="language">
+        <option value="en-US">English (United States)</option>
+        <!-- Other language options -->
+    </select>
+        <button mat-flat-button>Help</button>
+        <button mat-flat-button>Privacy</button> 
+        <button mat-flat-button>Terms</button> 
+</footer>
