@@ -1,5 +1,36 @@
-<div class="createnote-first-cnt">
-        <span>Take a note...</span>
-        <img class="checked" src="assets/Images/checked.png" alt="new note">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<div (click)="func()" class="createnote-first-cnt">
+    <input  type="text" placeholder="Take a note...">
+    <button mat-icon-button aria-label="New list">
+    <mat-icon svgIcon="tick-icon"></mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Note with drawing">
+    <mat-icon svgIcon="brush-icon"></mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Note with Image">
+    <mat-icon svgIcon="img-icon"></mat-icon>
+    </button>
 </div>
+<div *ngIf="hide" class="createnote-detailednotes-cnt">
+    <input type="text" placeholder="Title">
+    <input type="text" placeholder="Take a note...">
+    <button mat-icon-button aria-label="remainder">
+    <mat-icon svgIcon="reminder-icon"></mat-icon>
+</button>
+    <button mat-icon-button aria-label="Add colaborator">
+    <mat-icon svgIcon="collaborator-icon"></mat-icon>
+</button>
+    <button mat-icon-button aria-label="Background Colour">
+    <mat-icon svgIcon="backgroundcolor-icon"></mat-icon>
+</button>
+    <button mat-icon-button aria-label="Archive">
+    <mat-icon svgIcon="archive-icon"></mat-icon>
+</button>
+    <button mat-icon-button aria-label="Undo">
+    <mat-icon svgIcon="undo-icon"></mat-icon>
+</button>
+    <button mat-icon-button aria-label="Redo">
+    <mat-icon svgIcon="redo-icon"></mat-icon>
+</button>
+    <button class="createnote-close-btn" mat-flat-button>Close</button>
+  </div>
+

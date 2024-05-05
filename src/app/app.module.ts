@@ -5,6 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotescontainerComponent } from './components/notescontainer/notescontainer.component';
 import { ArchivecontainerComponent } from './components/archivecontainer/archivecontainer.component';
 import { TrashcontainerComponent } from './components/trashcontainer/trashcontainer.component';
-import { CreatenoteComponent } from './components/createnote/createnote.component';
+import { CreatenoteComponent } from './components/createnote/CreatenoteComponent';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { CreatenoteComponent } from './components/createnote/createnote.componen
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule
 
   ],
   providers: [],
