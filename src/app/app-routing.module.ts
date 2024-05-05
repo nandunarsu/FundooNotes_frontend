@@ -7,7 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotescontainerComponent } from './components/notescontainer/notescontainer.component';
 import { ArchivecontainerComponent } from './components/archivecontainer/archivecontainer.component';
 import { TrashcontainerComponent } from './components/trashcontainer/trashcontainer.component';
-import { CreatenoteComponent } from './components/createnote/createnote.component';
+import { CreatenoteComponent } from './components/createnote/CreatenoteComponent';
 
 const routes: Routes=[
   {path: "login", component: LoginComponent},
