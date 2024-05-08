@@ -1,4 +1,5 @@
-<div (click)="func()" class="createnote-first-cnt">
+<div >
+    <div class="createnote-first-cnt">
     <input  type="text" placeholder="Take a note...">
     <button mat-icon-button aria-label="New list">
     <mat-icon svgIcon="tick-icon"></mat-icon>
@@ -10,12 +11,18 @@
     <mat-icon svgIcon="img-icon"></mat-icon>
     </button>
 </div>
-<div *ngIf="hide" class="createnote-detailednotes-cnt">
-    <input type="text" placeholder="Title">
-    <input type="text" placeholder="Take a note...">
+<div  class="createnote-detailednotes-cnt">
+    <div class="create-note-pinicon-cnt">
+    <input class="createnote-text" type="text" placeholder="Title">
+    <button mat-icon-button aria-label="Note with Image">
+        <mat-icon class="createnote-pin-icon" svgIcon="pin-icon"></mat-icon>
+        </button>
+    </div>
+    <input class="createnote-text" type="text" placeholder="Take a note...">
+    <div>
     <button mat-icon-button aria-label="remainder">
     <mat-icon svgIcon="reminder-icon"></mat-icon>
-</button>
+    </button>
     <button mat-icon-button aria-label="Add colaborator">
     <mat-icon svgIcon="collaborator-icon"></mat-icon>
 </button>
@@ -32,5 +39,6 @@
     <mat-icon svgIcon="redo-icon"></mat-icon>
 </button>
     <button class="createnote-close-btn" mat-flat-button>Close</button>
-  </div>
+  
+</div>
 

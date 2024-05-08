@@ -1,0 +1,25 @@
+.note-card-main-cntr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 250px;
+    height: 120px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    &:hover {
+      .note-card-button-cntr,.notecared-pin-icon {
+        visibility: visible;
+      }
+    }
+  }
+  
+  .note-card-button-cntr {
+    margin-top: 50px;
+    visibility: hidden;
+  }
+
+  .notecared-pin-icon{
+   margin-left: 100px;
+    visibility: hidden;
+  }

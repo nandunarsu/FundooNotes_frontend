@@ -1,12 +1,17 @@
 .createnote-first-cnt{
     border: 1px solid black;
-    border-radius: 1px solid black;
-    width: 300px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 500px;
+    padding: 10px;
     // height: 5px;
     padding: 10px;
     display: flex;
     //justify-content: space-between;
-    align-items: center;
+    justify-content: row;
+   // margin-top: 70px;
+    margin-left: 500px;
+    margin-right: 500px;
 }
 .createnote-first-cnt input{
     border: none;
@@ -19,13 +24,35 @@
     cursor: pointer;
 }
 .createnote-detailednotes-cnt{
-    margin-left: 10px;
+    border: 1px solid black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
-    display: none;
+    gap: 20px;
+    //display: none;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 500px;
+    margin-right: 500px;
+
+
+}
+// .createnote-pin-icon{
+//     margin-left: 190px;
+// }
+.createnote-close-btn{
+  margin-left: 190px;
+}
+.createnote-text{
     border: none;
     outline: none;
-    width: 100%;
 }
-.createnote-close-btn{
-  margin-left: auto;
+.create-note-pinicon-cnt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
