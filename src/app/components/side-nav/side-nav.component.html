@@ -1,0 +1,106 @@
+<!-- <div>
+<mat-drawer-container >
+    <mat-drawer mode="side" opened>
+        <button mat-icon-button aria-label="Note">
+     <mat-icon svgIcon="note-icon"></mat-icon>
+     </button>
+    <button mat-icon-button aria-label="Remainder">
+   <mat-icon svgIcon="reminder-icon"></mat-icon>
+    </button>
+        <button mat-icon-button aria-label="Edit">
+     <mat-icon svgIcon="edit-icon"></mat-icon>
+     </button>
+     <button mat-icon-button aria-label="Archive">
+     <mat-icon svgIcon="archive-icon"></mat-icon>
+     </button>
+     <button mat-icon-button aria-label="Trash">
+     <mat-icon svgIcon="trash-icon"></mat-icon>
+     </button>
+    </mat-drawer>
+    <mat-drawer-content>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  </div> -->
+    <!-- <div class="sidenav-icon-cnt">
+        <button mat-icon-button aria-label="Note">
+      <mat-icon svgIcon="note-icon"></mat-icon>
+      
+      <span class="sidenav-drawer-content">Notes</span>
+   </button>
+      <button mat-icon-button aria-label="Remainder">
+  <mat-icon svgIcon="reminder-icon"></mat-icon>
+  
+  <span class="sidenav-drawer-content">Remainder</span>
+  </button>
+      <button mat-icon-button aria-label="Edit">
+    <mat-icon svgIcon="edit-icon"></mat-icon>
+    <span class="sidenav-drawer-content">Edit labels</span>
+    </button>
+      <button mat-icon-button aria-label="Archive">
+     <mat-icon svgIcon="archive-icon"></mat-icon>
+     <span class="sidenav-drawer-content">Archive</span>
+      </button>
+   <button mat-icon-button aria-label="Trash">
+      <mat-icon svgIcon="trash-icon"></mat-icon>
+      <span class="sidenav-drawer-content">Trash</span>
+     </button>
+    </div> -->
+
+    <mat-drawer-container class="sidenav-icon-cnt" [hasBackdrop]="false" class="sidenav-icon-cnt">
+        <mat-drawer #drawer [mode]="'over'">
+            <button mat-icon-button aria-label="Note">
+          <mat-icon svgIcon="note-icon"></mat-icon>
+          
+          <span class="sidenav-drawer-content">Notes</span>
+       </button>
+          <button mat-icon-button aria-label="Remainder">
+      <mat-icon svgIcon="reminder-icon"></mat-icon>
+      <span class="sidenav-drawer-content">Remainder</span>
+      </button>
+          <button mat-icon-button aria-label="Edit">
+        <mat-icon svgIcon="edit-icon"></mat-icon>
+        <span class="sidenav-drawer-content">Edit labels</span>
+        </button>
+          <button mat-icon-button aria-label="Archive">
+         <mat-icon svgIcon="archive-icon"></mat-icon>
+         <span class="sidenav-drawer-content">Archive</span>
+          </button>
+       <button mat-icon-button aria-label="Trash">
+          <mat-icon svgIcon="trash-icon"></mat-icon>
+          <span class="sidenav-drawer-content">Trash</span>
+         </button>
+        </mat-drawer>
+        <mat-drawer-content class="sidenav-icon-drawer-btns">
+            <!-- <div class="sidenav-icons"> -->
+            <button mat-icon-button aria-label="Note">
+                <mat-icon svgIcon="note-icon"></mat-icon>
+
+             </button>
+                <button mat-icon-button aria-label="Remainder">
+            <mat-icon svgIcon="reminder-icon"></mat-icon>
+           
+            </button>
+                <button mat-icon-button aria-label="Edit">
+              <mat-icon svgIcon="edit-icon"></mat-icon>
+              
+              </button>
+                <button mat-icon-button aria-label="Archive">
+               <mat-icon svgIcon="archive-icon"></mat-icon>
+               
+                </button>
+             <button mat-icon-button aria-label="Trash">
+                <mat-icon svgIcon="trash-icon"></mat-icon>
+               </button>
+           <!-- </div> -->
+           <div class="router-outlet-cnt">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="router-outlet-cnt">
+            <router-outlet></router-outlet>
+        </div>
+</mat-drawer-content>
+
+</mat-drawer-container>
+
+
+   

@@ -8,11 +8,16 @@ import { NotescontainerComponent } from './components/notescontainer/notescontai
 import { ArchivecontainerComponent } from './components/archivecontainer/archivecontainer.component';
 import { TrashcontainerComponent } from './components/trashcontainer/trashcontainer.component';
 import { CreatenoteComponent } from './components/createnote/CreatenoteComponent';
+import { HeaderComponent } from './components/header/header.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
+//import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 const routes: Routes=[
   {path: "login", component: LoginComponent},
   {path: "signup", component: SignupComponent},
   {path: "notecard",component:NoteCardComponent},
+  {path: "header",component:HeaderComponent},
+ {path: "sidenav",component:SideNavComponent},
   {path: "dashboard",component:DashboardComponent,children:
   [
     {path: "notes",component:NotescontainerComponent},
