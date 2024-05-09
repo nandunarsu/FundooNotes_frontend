@@ -13,7 +13,7 @@ export class NotescontainerComponent implements OnInit {
   constructor(private notesService:NoteserviceService) { }
 
   ngOnInit() {
-    this.notesService.getApi().subscribe((res:any)=>this.notesList=res.data,(err=>console.log(err)))
+    this.notesService.getNotesApi().subscribe((res:any)=>this.notesList=res.data,(err=>console.log(err)))
     
   }
 

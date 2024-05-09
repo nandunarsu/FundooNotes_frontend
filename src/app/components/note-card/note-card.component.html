@@ -1,6 +1,12 @@
 <div class="note-card-main-cntr" *ngFor="let note of notesData">
-    <span>{{note.title}}</span>
+    <span>{{note.title }}</span>
     <span>{{note.description}}</span>
+    <div *ngIf="container == 'trash' else noteIcons">
+
+    </div>
+    <ng-template #noteIcons>
+
+    </ng-template>
     <button mat-icon-button aria-label="Reminder">
         <mat-icon class="notecared-pin-icon" svgIcon="pin-icon"></mat-icon>
       </button>
@@ -24,8 +30,16 @@
         <mat-icon svgIcon="archive-icon"></mat-icon>
       </button>
   
-      <button mat-icon-button aria-label="More">
+      <button mat-icon-button aria-label="More" [matMenuTriggerFor]="menu">
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Delete note</button>
+            <button mat-menu-item>Add Drawing</button>
+        </mat-menu>
         <mat-icon svgIcon="more-icon"></mat-icon>
+    
       </button>
+     
+
+
     </div>
   </div>

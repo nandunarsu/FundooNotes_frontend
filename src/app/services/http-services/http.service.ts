@@ -14,7 +14,10 @@ export class HttpService {
   loginsignupApiCall(data:any,endpoint:string){
   return this.httpClient.post(`${this.baseUrl + endpoint}`,data);
   }
-  getNotesApiCall(endpoint:string){
+  NotesApiCall(endpoint:string){
     return this.httpClient.get(`${this.baseUrl + endpoint}`,{headers:this.header});
+  }
+  createNotesApiCall(endpoint:string,data:any){
+    return this.httpClient.post(`${this.baseUrl + endpoint}`,data,{headers:this.header});
   }
 }

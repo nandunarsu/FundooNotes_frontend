@@ -11,6 +11,7 @@ import { ARCHIVE_ICON, BRUSH_ICON, COLLABRATOR_ICON, COLOR_PALATTE_ICON, EDIT_IC
 })
 export class NoteCardComponent implements OnInit {
   @Input() notesData:any[]=[]
+  @Input() container: string = "notes"
 
   constructor(iconRegistry:MatIconRegistry,sanitizer:DomSanitizer) { 
     iconRegistry.addSvgIconLiteral("note-icon", sanitizer.bypassSecurityTrustHtml(NOTE_ICON))

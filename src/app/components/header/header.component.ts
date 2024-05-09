@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { DataService } from 'src/app/services/data-service/data.service';
 import { LIST_VIEW_ICON, MENU_ICON, OTHER_MENU_ICON, REFRESH_ICON, SEARCH_ICON, SETTING_ICON } from 'src/assets/Images/svg-icons';
 
 @Component({
@@ -10,7 +11,8 @@ import { LIST_VIEW_ICON, MENU_ICON, OTHER_MENU_ICON, REFRESH_ICON, SEARCH_ICON, 
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  drawerState!:boolean
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,private dataService:DataService) {
     iconRegistry.addSvgIconLiteral("menu-icon", sanitizer.bypassSecurityTrustHtml(MENU_ICON));
     iconRegistry.addSvgIconLiteral("refresh-icon", sanitizer.bypassSecurityTrustHtml(REFRESH_ICON));
     iconRegistry.addSvgIconLiteral("list-icon", sanitizer.bypassSecurityTrustHtml(LIST_VIEW_ICON));
@@ -20,6 +22,10 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.dataService.currDrawerState.subscribe((res)=>(this.drawerState=res))
+  }
+  handleDrawer(){
+    this.dataService.updateDrawerState(!this.drawerState);
   }
 
 }
