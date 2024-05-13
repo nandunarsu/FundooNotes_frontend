@@ -1,2 +1,2 @@
-<app-createnote></app-createnote>
-<app-note-card [notesData]="notesList" class="note-card" [container]="'notes'"></app-note-card>
+<app-createnote (updateList)="handleUpdateNotesList($event)"></app-createnote>
+<app-note-card [notesData]="notesList" class="note-card" [container]="'notes'" (updateList)="handleUpdateNotesList($event)"></app-note-card>

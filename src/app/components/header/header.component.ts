@@ -11,7 +11,8 @@ import { LIST_VIEW_ICON, MENU_ICON, OTHER_MENU_ICON, REFRESH_ICON, SEARCH_ICON, 
 })
 export class HeaderComponent implements OnInit {
 
-  drawerState!:boolean
+  drawerState!:boolean;
+  searchString!:string;
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,private dataService:DataService) {
     iconRegistry.addSvgIconLiteral("menu-icon", sanitizer.bypassSecurityTrustHtml(MENU_ICON));
     iconRegistry.addSvgIconLiteral("refresh-icon", sanitizer.bypassSecurityTrustHtml(REFRESH_ICON));
@@ -22,10 +23,15 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataService.currDrawerState.subscribe((res)=>(this.drawerState=res))
+    this.dataService.currDrawerState.subscribe((res)=>(this.drawerState=res));
+    this.dataService.currentSearchString.subscribe((res)=>(this.searchString=res));
   }
   handleDrawer(){
     this.dataService.updateDrawerState(!this.drawerState);
+  }
+
+  handleSearchString(){
+    this.dataService.updateSearchString(this.searchString)
   }
 
 }

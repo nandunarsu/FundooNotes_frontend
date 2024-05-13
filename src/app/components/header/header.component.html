@@ -10,7 +10,7 @@
          <button mat-icon-button aria-label="search">
           <mat-icon svgIcon="search-icon"></mat-icon>
           </button>
-            <input class="search-bar" type="text" placeholder="Search">
+          <input type="text"  [(ngModel)]="searchString" (input)="handleSearchString()" class="search-input" placeholder="Search...">
         </div> 
       <button mat-icon-button aria-label="refresh">
      <mat-icon svgIcon="refresh-icon"></mat-icon>
@@ -26,7 +26,14 @@
         <mat-icon svgIcon="apps-icon"></mat-icon>
     </button>
    
-        <span class="google_icon">NK</span>
+        <!-- <span class="google_icon">NK</span> -->
+
+        <button mat-icon-button  [matMenuTriggerFor]="icon">
+            <mat-menu #icon="matMenu">
+                <button mat-menu-item>Logout</button>
+            </mat-menu>
+            <span class="google_icon">NK</span>
+          </button>
     </div>
 
     </mat-toolbar-row>
