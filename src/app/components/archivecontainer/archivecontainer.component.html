@@ -1,1 +1,2 @@
-<app-note-card></app-note-card>
+<app-note-card [notesData]="archiveNotesList" class="note-card" (updateList)="handleUpdateNotesList($event)"
+[container]="'archive'"></app-note-card>

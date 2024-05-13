@@ -1,7 +1,13 @@
-<div class="note-card-main-cntr" *ngFor="let note of notesData">
-    <span>{{note.title}}</span>
-    <span>{{note.description}}</span>
-    <button mat-icon-button aria-label="Reminder">
+<div [style.background-color]="note.colour" class="note-card-main-cntr" *ngFor="let note of notesData | searchNote: searchString ">
+    <span (click)="handleEditNote(note)">{{note.title }}</span>
+    <span (click)="handleEditNote(note)">{{note.description}}</span>
+    <div *ngIf="container == 'trash' else noteIcons">
+      <mat-icon svgIcon="trash-icon"></mat-icon>
+      <mat-icon svgIcon="trash-icon"></mat-icon>
+    </div>
+
+    <ng-template #noteIcons>
+      <button mat-icon-button aria-label="Reminder">
         <mat-icon class="notecared-pin-icon" svgIcon="pin-icon"></mat-icon>
       </button>
     <div class="note-card-button-cntr">
@@ -13,7 +19,23 @@
         <mat-icon svgIcon="collaborator-icon"></mat-icon>
       </button>
   
-      <button mat-icon-button aria-label="Color Palette">
+      <button mat-icon-button aria-label="Color Palette" [matMenuTriggerFor]="menu">
+        <mat-menu #menu="matMenu">
+            <div class="color-palate-cnt">    
+              <div class="col1" matTooltip="Default" (click)= "handleNoteIconsClickNote(note,'colour','#ffffff')" ></div>
+              <div class="col2" matTooltip="Coral" (click)= "handleNoteIconsClickNote(note,'colour','#FAAFA8')" ></div>
+              <div class="col3" matTooltip="Peach" ></div>
+              <div class="col4" matTooltip="Sand" ></div>
+              <div class="col5" matTooltip="Mint" ></div>
+              <div class="col6" matTooltip="Sage" ></div>
+              <div class="col7" matTooltip="Fog" ></div>
+              <div class="col8" matTooltip="Storm" ></div>
+              <div class="col9" matTooltip="Dusk" ></div>
+              <div class="col10" matTooltip="Blossom" ></div>
+              <div class="col11" matTooltip="Clay" ></div>
+              <div class="col12" matTooltip="Chalk" ></div>           
+          </div>
+        </mat-menu>
         <mat-icon svgIcon="backgroundcolor-icon"></mat-icon>
       </button>
       <button mat-icon-button aria-label="Image">
@@ -21,11 +43,17 @@
       </button>
   
       <button mat-icon-button aria-label="Archive">
-        <mat-icon svgIcon="archive-icon"></mat-icon>
+        <mat-icon (click)="handleNoteIconsClickNote(note,'archive')" svgIcon="archive-icon" ></mat-icon>
       </button>
   
-      <button mat-icon-button aria-label="More">
+      <button mat-icon-button aria-label="More" [matMenuTriggerFor]="more">
+        <mat-menu #more="matMenu">
+            <button mat-menu-item (click)="handleNoteIconsClickNote(note,'trash')">Delete note</button>
+            <button mat-menu-item>Add Drawing</button>
+        </mat-menu>
         <mat-icon svgIcon="more-icon"></mat-icon>
+       
       </button>
     </div>
+    </ng-template>
   </div>

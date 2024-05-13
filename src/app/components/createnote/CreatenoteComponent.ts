@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { NoteserviceService } from 'src/app/services/note-service/note.service';
 import { ARCHIVE_ICON, BRUSH_ICON, COLLABRATOR_ICON, COLOR_PALATTE_ICON, EDIT_ICON, IMG_ICON, MORE_ICON, NOTE_ICON, PIN_ICON, REDO_ICON, REMINDER_ICON, TICK_ICON, UNDO_ICON } from 'src/assets/Images/svg-icons';
 
 
@@ -10,8 +11,12 @@ import { ARCHIVE_ICON, BRUSH_ICON, COLLABRATOR_ICON, COLOR_PALATTE_ICON, EDIT_IC
   styleUrls: ['./createnote.component.scss']
 })
 export class CreatenoteComponent implements OnInit {
+  @Output() updateList = new EventEmitter();
+  createNote:boolean=true
+  title:string=""
+  description:string=""
 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,private noteService:NoteserviceService) {
     iconRegistry.addSvgIconLiteral("note-icon", sanitizer.bypassSecurityTrustHtml(NOTE_ICON));
     iconRegistry.addSvgIconLiteral("reminder-icon", sanitizer.bypassSecurityTrustHtml(REMINDER_ICON));
     iconRegistry.addSvgIconLiteral("edit-icon", sanitizer.bypassSecurityTrustHtml(EDIT_ICON));
@@ -28,17 +33,27 @@ export class CreatenoteComponent implements OnInit {
     iconRegistry.addSvgIconLiteral('pin-icon', sanitizer.bypassSecurityTrustHtml(PIN_ICON));
   }
 
-  hide: boolean = true;
-  func() {
-    if (this.hide == false) {
-      this.hide = true;
-    }
-    else {
-      this.hide = false;
-    }
-  }
 
   ngOnInit(): void {
   }
+  handleCreateNote(){
+    this.createNote=!this.createNote;
+    console.log(this.title);
+    if(this.title || this.description){
+      //do api call after calling this.title=" " and this.descrption=" "
+      this.noteService.addNotesApi({
+        title:this.title,
+        description:this.description,
+        colour:"#ffffff",
+        isArchived:false,
+        isDeleted:false})
+      .subscribe((res)=>{ this.updateList.emit({data:{title:this.title,description:this.description,colour:"#ffffff",
+      isArchived:false,
+      isDeleted:false},action:'addNote',});
+      this.title = "";
+      this.description ="";
+     } );
+    }
+    }
+  }
 
-}

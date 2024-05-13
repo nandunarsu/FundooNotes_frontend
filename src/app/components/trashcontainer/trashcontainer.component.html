@@ -1,1 +1,2 @@
-<app-note-card></app-note-card>
+<app-note-card [notesData]="trashNotesList" class="note-card" [container]="'trash'" (updateList)="handleUpdateNotesList($event)"
+></app-note-card>

@@ -9,6 +9,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +26,8 @@ import { TrashcontainerComponent } from './components/trashcontainer/trashcontai
 import { CreatenoteComponent } from './components/createnote/CreatenoteComponent';
 import { HeaderComponent } from './components/header/header.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { SearchPipe } from './pipe/search.pipe';
+import { EditNoteComponent } from './components/edit-note/edit-note.component';
 
 
 @NgModule({
@@ -39,6 +43,8 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     CreatenoteComponent,
     HeaderComponent,
     SideNavComponent,
+    SearchPipe,
+    EditNoteComponent,
     
   ],
   imports: [
@@ -55,7 +61,9 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

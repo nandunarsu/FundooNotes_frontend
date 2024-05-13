@@ -10,22 +10,22 @@ import { TrashcontainerComponent } from './components/trashcontainer/trashcontai
 import { CreatenoteComponent } from './components/createnote/CreatenoteComponent';
 import { HeaderComponent } from './components/header/header.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { AuthGuardService } from './services/authGuard-service/auth-guard.service';
 //import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 const routes: Routes=[
+  {path:'', redirectTo:"login",pathMatch:'prefix'},
   {path: "login", component: LoginComponent},
   {path: "signup", component: SignupComponent},
-  {path: "notecard",component:NoteCardComponent},
-  {path: "header",component:HeaderComponent},
- {path: "sidenav",component:SideNavComponent},
-  {path: "dashboard",component:DashboardComponent,children:
+  
+  {path: "dashboard",component:DashboardComponent, canActivate:[AuthGuardService], children:
   [
     {path: "notes",component:NotescontainerComponent},
     {path: "archive",component:ArchivecontainerComponent},
     {path: "trash",component:TrashcontainerComponent}
   ]
-  },
-  {path: "createnote",component:CreatenoteComponent}
+  }
+  
 ] ;
 
 @NgModule({
